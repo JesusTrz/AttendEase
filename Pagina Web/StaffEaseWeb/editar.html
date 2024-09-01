@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="css/editar.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+<div class="logo-container">
+    <a href="index.html"><img src="img/Logo__2_-removebg-preview.png" alt="Logo" class="logo"></a>
+</div>
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="editar.html">Editar</a></li>
+        <li><a href="consulta.html">Consulta</a></li>
+    </ul>
+</nav>
+<br><br><br>
+
+<div class="main-container">
+    <div class="info-container">
+        <h2>¡IMPORTANTE!</h2>
+        <p>Este apartado de la página web está diseñado específicamente para la administración y gestión de usuarios registrados en el sistema.</p>
+    </div>
+     
+    <div class="form-container">
+        <h2>Buscar y Editar Usuario</h2>
+        <p>Utiliza el siguiente formulario para buscar y seleccionar un empleado por nombre de usuario. Una vez seleccionado, podrás editar su información.</p>
+        
+        <!-- Formulario para buscar usuario por nombre -->
+        <div class="search">
+            <form id="searchForm" action="php/buscar_usuario.php" method="get" onsubmit="return buscarUsuario(event)">
+                <label for="nombre_usuario">Nombre del Usuario:</label>
+                <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+        
+        <!-- Formulario para editar información del usuario -->
+        <div class="edit-form">
+            <form id="editForm" action="php/procesar_edicion.php" method="post">
+                <input type="hidden" id="usuario_id" name="usuario_id">
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="apellido_paterno">Apellido Paterno:</label>
+                <input type="text" id="apellido_paterno" name="apellido_paterno" required>
+
+                <label for="apellido_materno">Apellido Materno:</label>
+                <input type="text" id="apellido_materno" name="apellido_materno">
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="contrasena">Nueva Contraseña (opcional):</label>
+                <input type="password" id="contrasena" name="contrasena">
+
+                <input type="submit" value="Guardar Cambios">
+            </form>
+        </div>
+    </div>
+
+    <div class="delete-container">
+        <h2>Eliminar Usuario</h2>
+        <p>Para eliminar un usuario, ingresa el nombre del usuario y presiona "Eliminar".</p>
+        
+        <!-- Formulario para eliminar usuario -->
+        <form id="deleteForm" action="php/eliminar_usuario.php" method="post">
+            <label for="nombre_eliminar">Nombre del Usuario:</label>
+            <input type="text" id="nombre_eliminar" name="nombre_eliminar" required>
+            <input type="submit" value="Eliminar">
+        </form>
+    </div>
+</div>
+
+<script>
+function buscarUsuario(event) {
+    event.preventDefault();
+    var nombreUsuario = document.getElementById('nombre_usuario').value;
+    
+    fetch(`php/buscar_usuario.php?nombre_usuario=${nombreUsuario}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                cargarDatosUsuario(data.usuario);
+            } else {
+                alert('Usuario no encontrado');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function cargarDatosUsuario(usuario) {
+    document.getElementById('usuario_id').value = usuario.id;
+    document.getElementById('nombre').value = usuario.nombre;
+    document.getElementById('apellido_paterno').value = usuario.apellido_paterno;
+    document.getElementById('apellido_materno').value = usuario.apellido_materno;
+    document.getElementById('correo').value = usuario.correo_electronico;
+    document.getElementById('usuario').value = usuario.usuario;
+}
+</script>
+
+</body>
+</html>

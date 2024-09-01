@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>¡Bienvenido a StaffEase Web!</h1>
+            <p>Si estás en esta página es porque ¡Muy probablemente estás trabajando en nuestra empresa como el administrador de nuestros usuarios!..</p>
+            <p class="textodialogo"><i>(O simplemente eres parte del equipo de trabajo del equipo de desarrollo web)</i></p>
+
+            <div class="login-container">
+                <form action="php/login.php" method="POST">
+                    <h2>Inicio de Sesión</h2>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contrasena" required>
+
+                    <input type="submit" value="Ingresar">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

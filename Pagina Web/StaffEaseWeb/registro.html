@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <br>
+    <div class="logo-container">
+        <a href="index.html"><img src="img/Logo__2_-removebg-preview.png" alt="Logo" class="logo"></a>
+    </div>
+    
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="editar.html">Editar</a></li>
+                <li><a href="consulta.html">Consulta</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <form action="php/registro.php" method="post">
+                <h3>REGISTRAR NUEVO USUARIO:</h3>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            
+                <label for="apellido_paterno">Apellido Paterno:</label>
+                <input type="text" id="apellido_paterno" name="apellido_paterno" required>
+            
+                <label for="apellido_materno">Apellido Materno:</label>
+                <input type="text" id="apellido_materno" name="apellido_materno" required>
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required>
+            
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            
+                
+            
+                <input type="submit" value="Registrar">
+            </form>            
+    
+            <div class="description">
+                <h3>¡IMPORTANTE!</h3>
+                <p>
+                    Esta página web está diseñada específicamente para gestionar y controlar la información contenida en una base de datos que respalda una aplicación móvil. Nuestra plataforma proporciona una serie de herramientas y funcionalidades clave para facilitar la administración de datos de manera eficiente y efectiva. A través de esta plataforma, podrás realizar una variedad de acciones, cada una optimizada para mejorar la gestión de usuarios y datos:
+                </p>
+                <ul>
+                    <li><strong>Registrar nuevos usuarios:</strong> Nuestra plataforma permite agregar nuevos perfiles de usuario a la base de datos de manera rápida y sencilla. El proceso de registro está diseñado para ser intuitivo, requiriendo solo la información esencial como nombre, correo electrónico y otros datos relevantes. Esto asegura que los nuevos usuarios puedan ser incorporados al sistema con facilidad y sin complicaciones.</li>
+                    <li><strong>Editar información:</strong> Una vez que los usuarios están registrados, es posible modificar y actualizar sus datos cuando sea necesario. Esta funcionalidad es crucial para mantener la información actualizada y precisa. Puedes realizar cambios en cualquier campo del perfil de usuario, incluyendo detalles personales, información de contacto y otros atributos importantes.</li>
+                    <li><strong>Eliminar usuarios:</strong> En situaciones donde los perfiles de usuario ya no son necesarios o se deben eliminar por otras razones, nuestra plataforma ofrece una opción para eliminar usuarios de la base de datos. Este proceso es eficiente y asegura que los datos obsoletos no permanezcan en el sistema, ayudando a mantener la integridad de la base de datos.</li>
+                    <li><strong>Consultar datos:</strong> La capacidad de visualizar y buscar información almacenada es una de las características más poderosas de la plataforma. Los usuarios pueden acceder a la base de datos para revisar registros específicos, realizar búsquedas detalladas y obtener informes sobre la información contenida en el sistema. Esto facilita la toma de decisiones informadas y el análisis de datos.</li>
+                </ul>
+                <p>
+                    Todo esto se realiza en un entorno diseñado para ser sencillo y eficiente, asegurando que la gestión y administración de datos se lleve a cabo de manera fluida y sin problemas. La interfaz está optimizada para ofrecer una experiencia de usuario agradable, con herramientas accesibles y funcionalidades que permiten un control total sobre la información de la base de datos.
+                </p>
+                <p>
+                    Además, la plataforma está equipada con medidas de seguridad para proteger los datos sensibles y garantizar que solo usuarios autorizados puedan realizar modificaciones. Esto proporciona una capa adicional de seguridad y confianza, tanto para los administradores como para los usuarios finales.
+                </p>
+                <p>
+                    En resumen, nuestra página web es una solución integral para la gestión de datos en una aplicación móvil, combinando facilidad de uso, funcionalidad avanzada y seguridad robusta para satisfacer las necesidades de administración de datos en diversos escenarios.
+                </p>
+            </div>
+            
+        </div>
+</body>
+</html>

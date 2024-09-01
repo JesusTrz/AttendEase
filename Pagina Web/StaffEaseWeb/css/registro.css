@@ -1,0 +1,56 @@
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 80px auto 20px auto; /* Ajusta el margen para que no se superponga al nav */
+    gap: 20px; /* Espacio entre los contenedores */
+}
+
+.description {
+    flex: 2;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    order: 2; /* Asegura que esté en el lado derecho */
+}
+
+form {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    order: 1; /* Asegura que esté en el lado izquierdo */
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 94%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #002fff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1d46ff;
+}

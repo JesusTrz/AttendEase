@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Asistencias</title>
+    <link rel="stylesheet" href="css/consulta.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html"><img src="img/Logo__2_-removebg-preview.png" alt="Logo" class="logo"></a>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="editar.html">Editar</a></li>
+            <li><a href="consulta.html">Consulta</a></li>
+        </ul>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container">
+        <h2>Consultar Asistencias por Usuario</h2>
+        <p>En este apartado, puedes revisar las asistencias registradas de los empleados de manera rápida y sencilla.</p>
+
+        <form action="php/procesar_consulta.php" method="post">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <input type="submit" value="Consultar">
+        </form>
+
+        <div id="resultados">
+            <h3>Resultados de la Consulta</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Fecha de Entrada</th>
+                        <th>Hora de Entrada</th>
+                        <th>Fecha de Salida</th>
+                        <th>Hora de Salida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (isset($_POST['usuario'])) {
+                        include 'php/procesar_consulta.php';
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

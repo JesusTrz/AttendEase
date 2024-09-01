@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #0b0d0f, #1a1d21, #292e36); /* Degradado de izquierda a derecha */
+    color: #333; /* Color del texto para contraste */
+}
+
+nav {
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px; /* Reducir el padding para hacer el menú más compacto */
+    position: fixed; /* Posiciona el menú de manera fija */
+    top: 15px; /* Espacio desde la parte superior */
+    right: 8%; /* Espacio desde la parte derecha */
+    width: auto; /* Deja que el ancho se ajuste al contenido */
+    max-width: none; /* Elimina el límite de ancho máximo */
+    z-index: 1000; /* Asegura que el menú esté sobre otros elementos */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos de la lista dentro del nav */
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px; /* Reducir el tamaño de fuente */
+    transition: color 0.3s ease-in-out;
+    padding: 5px 10px; /* Reducir el padding para hacer los enlaces más compactos */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px; /* Posiciona la línea justo debajo del texto */
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+    left: 0%;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+
+.logo-container {
+    position: fixed; /* Posiciona el logo de manera fija */
+    top: 10px; /* Espacio desde la parte superior */
+    left: 1%; /* Espacio desde la parte izquierda */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 5px 10px; /* Espaciado alrededor de la imagen */
+    z-index: 1000; /* Asegura que el contenedor del logo esté sobre otros elementos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.logo {
+    height: 30px; /* Ajusta el tamaño del logo según tus necesidades */
+    transition: transform 0.3s ease; /* Transición suave para la imagen */
+}
+
+.logo-container:hover {
+    transform: scale(1.1); /* Agranda ligeramente el contenedor del logo */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+.logo-container:hover .logo {
+    transform: rotate(10deg); /* Rota ligeramente el logo al pasar el mouse */
+}
+
+.cerrarsesion {
+    position: fixed; /* Posiciona el logo de manera fija */
+    top: 10px; /* Espacio desde la parte superior */
+    right: 10px; /* Espacio desde la parte derecha */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 10px 30px; /* Espaciado alrededor de la imagen */
+    z-index: 1000; /* Asegura que el contenedor del logo esté sobre otros elementos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.exiticon {
+    height: 20px; /* Ajusta el tamaño del logo según tus necesidades */
+    transition: transform 0.3s ease; /* Transición suave para la imagen */
+}
+
+.cerrarsesion:hover {
+    transform: scale(1.1); /* Agranda ligeramente el contenedor */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+.exiticon:hover {
+    transform: rotate(20deg); /* Rota ligeramente la imagen al pasar el mouse */
+}
